@@ -1,9 +1,34 @@
+-- 1
 INSERT INTO Livros (titulo, autor, ano_publicacao, disponivel, categoria, isbn, editora, quantidade_paginas, idioma) 
 VALUES ("AS cronicas de narnia", "C.S Lewis", 1950, TRUE, "fantasia", "978-0064471190", "Editora hapercollins", 778, "frances");
-
+-- 2
 update livros set disponibilidade = false where ano_publicacao<1980;
-
-update livros set editora='plume bocks' where 
+-- 3
+ update livros set editora='plume bocks' where  titulo='1984';
+-- 4
+ delete from livros where idioma = 'ingles' and ano_publicação<2000;
+-- 5
+ select*from livros where quantidade_paginas>650;
+ 
+ -- 6
+ select count as total from  livros group by categoria;
+ 
+ -- 7
+ select * from livros order by id desc limit 5;
+ 
+ -- 8 
+ 
+ select avg(quantidade_paginas) as media_paginas from livros where disponivel=true;
+ 
+ -- 9
+ 
+ select * from livros order by ano_publicação desc;
+ 
+ 
+ -- 10
+ 
+ select * from livros where titulo like'%s%' and ano_publicação between 1970 and 1990;
+ 
 
 
 
